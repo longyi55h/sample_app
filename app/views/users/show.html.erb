@@ -8,4 +8,15 @@
             </h1>
         </section>
     </aside>
+    <h1>aaa</h1>
+    <div class="col-md-8">
+        <% if @user.microposts.any? %>
+        <h1>bbb</h1>
+            <h3>Microposts (<%= @user.microposts.count %>)</h3>
+            <ol class="microposts">
+                <%= render @microposts %>
+            </ol>
+            <%= will_paginate @microposts, renderer: BootstrapPagination::Rails %>
+        <% end %>
+    </div>
 </div>
